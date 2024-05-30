@@ -70,13 +70,13 @@ jobs:
         echo 'Testing...'
         cd src
         pipenv run coverage run -m unittest discover tests
-        pipenv run coverage html -d coverage_html
+        pipenv run coverage html -d report_html
 
     - name: Upload HTML coverage report
       uses: actions/upload-artifact@v2
       with:
           name: coverage-report
-          path: src/coverage_html
+          path: src/report_html
   
   notification:
     runs-on: ubuntu-latest
