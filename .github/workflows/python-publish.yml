@@ -58,6 +58,7 @@ jobs:
       run: |
         pip install pipenv
         pipenv install --dev
+        pip install coverage
 
     - name: Check PATH
       run: echo $PATH
