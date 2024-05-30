@@ -62,7 +62,7 @@ jobs:
       run: |
         echo 'Testing...'
         cd src
-        pipenv run coverage run -m unittest agendaTest.py
+        pipenv run coverage run -m unittest discover tests
         pipenv run coverage html
 
   notification:
