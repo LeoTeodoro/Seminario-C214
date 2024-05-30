@@ -57,18 +57,18 @@ class TestAgenda(unittest.TestCase):
         self.assertEqual(agenda.readShows(), []) # Verifica se a lista está vazia após a limpeza
 
     def test_clear_shows_not_empty(self):
-            agenda = Agenda() # Cria uma nova agenda
-            show1 = Show("Local L", "19:00", "10/05/2024", "Henrique e Juliano", 700.00) # Cria um objeto Show
-            show2 = Show("Local M", "20:00", "11/05/2024", "Jorge e Mateus", 800.00) # Cria um objeto Show
-            agenda.createShow(show1) # Adiciona o show na agenda
-            agenda.createShow(show2) # Adiciona o show na agenda
-            
-            self.assertTrue(agenda.readShows())  # Verifica se a lista de shows não está vazia
+        agenda = Agenda() # Cria uma nova agenda
+        show1 = Show("Local L", "19:00", "10/05/2024", "Henrique e Juliano", 700.00) # Cria um objeto Show
+        show2 = Show("Local M", "20:00", "11/05/2024", "Jorge e Mateus", 800.00) # Cria um objeto Show
+        agenda.createShow(show1) # Adiciona o show na agenda
+        agenda.createShow(show2) # Adiciona o show na agenda
+        
+        self.assertTrue(agenda.readShows())  # Verifica se a lista de shows não está vazia
 
-            agenda.clearShows() # Limpa a lista de shows
+        agenda.clearShows() # Limpa a lista de shows
 
-            self.assertFalse(agenda.readShows()) # Verifica se a lista de shows está vazia
-            
+        self.assertFalse(agenda.readShows()) # Verifica se a lista de shows está vazia
+        
     def test_update_show_invalid_index(self):
         agenda = Agenda()
         show = Show("Local X", "17:00", "07/05/2024", "Henrique e Juliano", 100.00)
