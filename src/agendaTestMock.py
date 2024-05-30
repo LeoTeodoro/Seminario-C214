@@ -1,7 +1,8 @@
 import unittest
 from unittest.mock import MagicMock
 
-from Agenda import Agenda, Show
+from agenda import Agenda, Show
+
 
 class AgendaTestMock(unittest.TestCase):
 

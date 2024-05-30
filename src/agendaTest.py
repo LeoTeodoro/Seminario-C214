@@ -68,6 +68,27 @@ class TestAgenda(unittest.TestCase):
             agenda.clearShows() # Limpa a lista de shows
 
             self.assertFalse(agenda.readShows()) # Verifica se a lista de shows está vazia
+            
+    def test_update_show_invalid_index(self):
+        agenda = Agenda()
+        show = Show("Local X", "17:00", "07/05/2024", "Henrique e Juliano", 100.00)
+        agenda.createShow(show)
+
+        updated_show = Show("Local 3", "21:00", "12/05/2024", "Luan Pereira", 900.00)
+
+        with self.assertRaises(IndexError): # Verifica se a exceção é lançada
+            agenda.updateShow(50, updated_show)  # Índice inválido
+            
+    def test_delete_show_invalid_index(self):
+        agenda = Agenda()
+        show = Show("Local X", "17:00", "07/05/2024", "Henrique e Juliano", 100.00)
+        show2 = Show("Local X", "17:00", "07/05/2024", "Henrique e Juliano", 100.00)
+        agenda.createShow(show)
+        agenda.createShow(show2)
+
+        with self.assertRaises(IndexError): # Verifica se a exceção é lançada
+            agenda.deleteShow(20)  # Índice inválido
+            
 
 if __name__ == "__main__":
     unittest.main()
