@@ -21,3 +21,12 @@ class Agenda:
         
     def clearShows(self):
         self.__shows = []
+
+    def mostrar_valor_show(self, index):
+        if 0 <= index < len(self.__shows):
+            return self.__shows[index].mostrar_valor()
+        else:
+            return "Índice inválido."
+        
+    def comparar_shows(self, show1, show2):
+        return show1 == show2
