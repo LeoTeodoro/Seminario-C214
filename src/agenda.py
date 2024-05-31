@@ -27,6 +27,3 @@ class Agenda:
             return self.__shows[index].mostrar_valor()
         else:
             return "Índice inválido."
-        
-    def comparar_shows(self, show1, show2):
-        return show1 == show2
