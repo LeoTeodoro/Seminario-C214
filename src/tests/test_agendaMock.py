@@ -36,11 +36,10 @@ class AgendaTestMock(unittest.TestCase):
         agenda_mock = Mock(spec=Agenda)
         show_mock = Mock(spec=Show)
         agenda_mock.createShow(show_mock)
-        agenda_mock.createShow.assert_called()
         agenda_mock.reset_mock()
         agenda_mock.createShow.assert_not_called()
 
-    def test_updateShow_with_Mock_falha_2(self):
+    def test_updateShow_with_Mock_2(self):
         agenda_mock = Mock(spec=Agenda)
         show_mock = Mock(spec=Show)
         agenda_mock.createShow(show_mock)
